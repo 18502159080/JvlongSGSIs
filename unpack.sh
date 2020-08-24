@@ -14,7 +14,6 @@ if [ "$1" == "" ]; then
     exit 1
 fi
 
-mkdir -p output
 LOCALDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 HOST="$(uname)"
 romzip="$(realpath $1)"
@@ -37,4 +36,3 @@ python3 $imgextractor "$outdir"/vendor.img "$outdir/vendor"
 # Delete system/vendor.img
 rm "$outdir"/system.img
 rm "$outdir"/vendor.img
-
